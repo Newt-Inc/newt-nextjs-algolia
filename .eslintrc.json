@@ -1,3 +1,45 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "next/**",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "**/*.css",
+            "group": "type",
+            "position": "before"
+          },
+          {
+            "pattern": "@/types/**",
+            "group": "type",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ]
+  }
 }
