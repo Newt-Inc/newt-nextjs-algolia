@@ -1,95 +1,122 @@
-import Image from 'next/image'
+'use client'
+import algoliasearch from 'algoliasearch/lite'
+import {
+  Hits,
+  InstantSearch,
+  PoweredBy,
+  RefinementList,
+  SearchBox,
+  SortBy,
+} from 'react-instantsearch'
 import styles from './page.module.css'
+
+const searchClient = algoliasearch(
+  process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID + '',
+  process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_ONLY_API_KEY + '',
+)
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+    <div className={styles.Wrapper}>
+      <InstantSearch
+        indexName={process.env.NEXT_PUBLIC_ALGOLIA_PRIMARY_INDEX + ''}
+        searchClient={searchClient}
+      >
+        <header className={styles.Header}>
+          <dl>
+            <dt>Newt・Algolia・Next.js Example</dt>
+            <dd>
+              <a
+                href="https://github.com/Newt-Inc/newt-algolia-nextjs"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://www.newt.so/docs/tutorials/search-by-algolia"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                Tutorial
+              </a>
+            </dd>
+          </dl>
+          <h1>Static Site Generators 😉</h1>
+          <div className="ais-Search_Wrapper">
+            <SearchBox />
+            <span className="ais-Search_Icon">
+              <img src="/search.svg" alt="" width="19" height="19" />
+            </span>
+            <PoweredBy className="ais-Search_Logo" />
+          </div>
+        </header>
+        <div className={styles.Container}>
+          <nav className={styles.Nav}>
+            <h2>Sort</h2>
+            <SortBy
+              items={[
+                {
+                  value: process.env.NEXT_PUBLIC_ALGOLIA_PRIMARY_INDEX + '',
+                  label: 'Relevance',
+                },
+                {
+                  value:
+                    process.env.NEXT_PUBLIC_ALGOLIA_REPLICA_INDEX_STAR + '',
+                  label: 'GitHub Stars',
+                },
+                {
+                  value:
+                    process.env.NEXT_PUBLIC_ALGOLIA_REPLICA_INDEX_TITLE + '',
+                  label: 'Title',
+                },
+              ]}
             />
-          </a>
+            <h2>Filter</h2>
+            <RefinementList
+              attribute={'tags'}
+              limit={10}
+              sortBy={['count:desc', 'name:asc']}
+            />
+          </nav>
+          {/* <main className={styles.Main}>
+            <NoResultsBoundary fallback={<NoResults />}>
+              <Hits hitComponent={Hit} />
+            </NoResultsBoundary>
+          </main> */}
         </div>
-      </div>
+        <footer className={styles.Footer}>
+          <dl>
+            <dt>Newt・Algolia・Next.js Example</dt>
+            <dd>
+              <a
+                href="https://github.com/Newt-Inc/newt-algolia-nextjs"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://www.newt.so/docs/tutorials/search-by-algolia"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                Tutorial
+              </a>
+            </dd>
+          </dl>
+        </footer>
+      </InstantSearch>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <a
+        href="https://newt.so/"
+        rel="noreferrer noopener"
+        target="_blank"
+        className={styles.Badge}
+      >
+        <img src="/logo.svg" alt="Newt" width="16" height="13" />
+        <span className={styles.Badge_Text}>Made in Newt</span>
+      </a>
+    </div>
   )
 }
