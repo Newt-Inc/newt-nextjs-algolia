@@ -2,7 +2,8 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:import/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "prettier"
   ],
   "rules": {
     "import/order": [
