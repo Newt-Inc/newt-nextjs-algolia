@@ -8,6 +8,8 @@ import {
   SearchBox,
   SortBy,
 } from 'react-instantsearch'
+import { Hit } from '@/components/Hit'
+import { NoResultsBoundary, NoResults } from '@/components/NoResults'
 import styles from './page.module.css'
 
 const searchClient = algoliasearch(
@@ -79,11 +81,11 @@ export default function Home() {
               sortBy={['count:desc', 'name:asc']}
             />
           </nav>
-          {/* <main className={styles.Main}>
+          <main className={styles.Main}>
             <NoResultsBoundary fallback={<NoResults />}>
               <Hits hitComponent={Hit} />
             </NoResultsBoundary>
-          </main> */}
+          </main>
         </div>
         <footer className={styles.Footer}>
           <dl>
