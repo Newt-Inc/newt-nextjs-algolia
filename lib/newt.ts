@@ -1,4 +1,3 @@
-import 'server-only'
 import { createClient } from 'newt-client-js'
 import { Generator } from '@/types/generator'
 
