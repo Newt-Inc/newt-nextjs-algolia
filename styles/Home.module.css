@@ -1,0 +1,190 @@
+.Wrapper {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.Header {
+  background: #f8f8f8;
+  text-align: center;
+  padding: 0 28px 68px 28px;
+}
+.Header dl {
+  margin: 0;
+  padding: 10px 0 50px 0;
+  display: flex;
+  align-items: center;
+}
+.Header dl dt {
+  border-right: none;
+  padding: 0;
+  margin: 0 auto 0 0;
+  line-height: 1.3;
+  font-size: 1.2rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.Header dl dd {
+  padding: 0;
+  margin: 0;
+  line-height: 1.3;
+}
+.Header dl dd a {
+  color: #888;
+  margin: 0 0 0 12px;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+.Header h1 {
+  font-size: 2.2rem;
+  margin: 0 0 12px 0;
+  padding: 0;
+}
+@media (min-width: 600px) {
+  .Header {
+    padding: 0 40px 110px 40px;
+  }
+  .Header dl {
+    padding: 10px 0 88px 0;
+    width: 720px;
+    margin: 0 auto;
+  }
+  .Header dl dt {
+    margin: 0 12px 0 0;
+  }
+  .Header h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Container */
+.Container {
+  display: block;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 28px;
+  flex: 1;
+  box-sizing: border-box;
+  align-items: flex-start;
+  position: relative;
+}
+@media (min-width: 600px) {
+  .Container {
+    display: flex;
+    padding: 68px 40px;
+  }
+}
+
+/* Nav */
+.Nav {
+  width: 100%;
+  margin: 0 0 40px 0;
+  position: relative;
+  top: 0;
+  border: 2px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 20px 24px;
+  box-sizing: border-box;
+}
+.Nav h2 {
+  font-size: 1.6rem;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 600px) {
+  .Nav {
+    width: 20%;
+    margin: 0 10% 0 0;
+    position: sticky;
+    top: 40px;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+  }
+  .Nav h2 {
+    margin: 0 0 4px 0;
+  }
+}
+
+/* Main */
+.Main {
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .Main {
+    width: 70%;
+  }
+}
+
+/* Footer */
+.Footer {
+  background: #f8f8f8;
+  text-align: center;
+  padding: 20px 0;
+}
+.Footer dl {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.Footer dl dt {
+  border-right: none;
+  padding: 0;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+  font-size: 1.3rem;
+}
+.Footer dl dd {
+  padding: 0;
+  margin: 0;
+  line-height: 1.3;
+}
+.Footer dl dd a {
+  color: #888;
+  margin: 0 8px;
+  font-size: 1.3rem;
+}
+@media (min-width: 600px) {
+  .Footer dl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Footer dl dt {
+    border-right: 1px solid #ccc;
+    padding: 0 16px 0 0;
+    margin: 0;
+  }
+  .Footer dl dd {
+    margin: 0 0 0 4px;
+  }
+  .Footer dl dd a {
+    margin: 0 0 0 12px;
+  }
+}
+
+/* Badge */
+.Badge {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  right: 16px;
+  bottom: 16px;
+  background: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 2px 8px -4px rgba(0, 0, 0, 0.5);
+  padding: 3px 8px;
+}
+.Badge_Text {
+  margin: 0 0 0 5px;
+}
