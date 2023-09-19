@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Highlight } from 'react-instantsearch'
 import type { Hit as AlgoliaHit } from 'instantsearch.js'
 import type { Generator } from '@/types/generator'
@@ -6,7 +7,7 @@ export function Hit({ hit }: { hit: AlgoliaHit & Generator }) {
   return (
     <>
       <div className="ais-Hits-item_Logo">
-        <img
+        <Image
           src={hit.logo.src}
           alt={hit.logo.fileName}
           width="40"
@@ -32,7 +33,7 @@ export function Hit({ hit }: { hit: AlgoliaHit & Generator }) {
             })}
           </div>
           <div className="ais-Hits-item_Star">
-            <img src="/star.svg" alt="" width="16" height="15" />
+            <Image src="/star.svg" alt="" width="16" height="15" />
             <span>{hit.star}</span>
           </div>
         </div>

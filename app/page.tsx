@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import algoliasearch from 'algoliasearch/lite'
 import {
   InstantSearch,
@@ -48,7 +49,7 @@ export default function Home() {
           <div className="ais-Search_Wrapper">
             <SearchBox />
             <span className="ais-Search_Icon">
-              <img src="/search.svg" alt="" width="19" height="19" />
+              <Image src="/search.svg" alt="" width="19" height="19" />
             </span>
             <PoweredBy className="ais-Search_Logo" />
           </div>
@@ -116,7 +117,7 @@ export default function Home() {
         target="_blank"
         className={styles.Badge}
       >
-        <img src="/logo.svg" alt="Newt" width="16" height="13" />
+        <Image src="/logo.svg" alt="Newt" width="16" height="13" />
         <span className={styles.Badge_Text}>Made in Newt</span>
       </a>
     </div>
