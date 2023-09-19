@@ -1,8 +1,8 @@
 import { Highlight } from 'react-instantsearch'
-import type { Hit as HitType } from 'instantsearch.js'
-import { Generator } from '@/types/generator'
+import type { Hit as AlgoliaHit } from 'instantsearch.js'
+import type { Generator } from '@/types/generator'
 
-export const Hit = ({ hit }: { hit: HitType & Generator }) => {
+export function Hit({ hit }: { hit: AlgoliaHit & Generator }) {
   return (
     <>
       <div className="ais-Hits-item_Logo">

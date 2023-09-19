@@ -1,11 +1,11 @@
 'use client'
 import algoliasearch from 'algoliasearch/lite'
 import {
-  Hits,
   InstantSearch,
+  SearchBox,
+  Hits,
   PoweredBy,
   RefinementList,
-  SearchBox,
   SortBy,
 } from 'react-instantsearch'
 import { Hit } from '@/components/Hit'
@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className={styles.Wrapper}>
       <InstantSearch
-        indexName={process.env.NEXT_PUBLIC_ALGOLIA_PRIMARY_INDEX + ''}
+        indexName={process.env.NEXT_PUBLIC_ALGOLIA_PRIMARY_INDEX}
         searchClient={searchClient}
       >
         <header className={styles.Header}>
@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </header>
         <div className={styles.Container}>
-          <nav className={styles.Nav}>
+          {/* <nav className={styles.Nav}>
             <h2>Sort</h2>
             <SortBy
               items={[
@@ -80,7 +80,7 @@ export default function Home() {
               limit={10}
               sortBy={['count:desc', 'name:asc']}
             />
-          </nav>
+          </nav> */}
           <main className={styles.Main}>
             <NoResultsBoundary fallback={<NoResults />}>
               <Hits hitComponent={Hit} />

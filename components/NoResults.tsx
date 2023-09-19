@@ -1,6 +1,6 @@
 import { useInstantSearch } from 'react-instantsearch'
 
-export const NoResultsBoundary = ({ children, fallback }: any) => {
+export function NoResultsBoundary({ children, fallback }: any) {
   const { results } = useInstantSearch()
 
   if (!results.__isArtificial && results.nbHits === 0) {
@@ -15,7 +15,7 @@ export const NoResultsBoundary = ({ children, fallback }: any) => {
   return children
 }
 
-export const NoResults = () => {
+export function NoResults() {
   const { indexUiState } = useInstantSearch()
 
   return (
