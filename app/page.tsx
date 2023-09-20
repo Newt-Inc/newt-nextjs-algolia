@@ -110,7 +110,6 @@ export default function Home() {
           </dl>
         </footer>
       </InstantSearch>
-
       <a
         href="https://newt.so/"
         rel="noreferrer noopener"

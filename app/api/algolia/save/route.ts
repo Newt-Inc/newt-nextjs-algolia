@@ -1,3 +1,4 @@
+import { NextRequest } from 'next/server'
 import algoliasearch from 'algoliasearch'
 import { getGenerators } from '@/lib/newt'
 
@@ -10,9 +11,8 @@ const index = algolia.initIndex(
   process.env.NEXT_PUBLIC_ALGOLIA_PRIMARY_INDEX + '',
 )
 
-export async function POST(request: Request) {
-  const { secret } = await request.json()
-
+export async function POST(request: NextRequest) {
+  const secret = request.nextUrl.searchParams.get('secret')
   if (secret !== process.env.ALGOLIA_SECRET_TOKEN) {
     return new Response('Invalid token', { status: 401 })
   }
