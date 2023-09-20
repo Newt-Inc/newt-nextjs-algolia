@@ -6,8 +6,8 @@ import {
   SearchBox,
   Hits,
   PoweredBy,
-  RefinementList,
   SortBy,
+  RefinementList,
 } from 'react-instantsearch'
 import { Hit } from '@/components/Hit'
 import { NoResultsBoundary, NoResults } from '@/components/NoResults'
@@ -55,7 +55,7 @@ export default function Home() {
           </div>
         </header>
         <div className={styles.Container}>
-          {/* <nav className={styles.Nav}>
+          <nav className={styles.Nav}>
             <h2>Sort</h2>
             <SortBy
               items={[
@@ -81,7 +81,7 @@ export default function Home() {
               limit={10}
               sortBy={['count:desc', 'name:asc']}
             />
-          </nav> */}
+          </nav>
           <main className={styles.Main}>
             <NoResultsBoundary fallback={<NoResults />}>
               <Hits hitComponent={Hit} />
