@@ -30,7 +30,7 @@ export default function Home() {
             <dt>Newt・Algolia・Next.js Example</dt>
             <dd>
               <a
-                href="https://github.com/Newt-Inc/newt-algolia-nextjs"
+                href="https://github.com/Newt-Inc/newt-nextjs-algolia"
                 rel="noreferrer noopener"
                 target="_blank"
               >
@@ -93,7 +93,7 @@ export default function Home() {
             <dt>Newt・Algolia・Next.js Example</dt>
             <dd>
               <a
-                href="https://github.com/Newt-Inc/newt-algolia-nextjs"
+                href="https://github.com/Newt-Inc/newt-nextjs-algolia"
                 rel="noreferrer noopener"
                 target="_blank"
               >
