@@ -185,7 +185,7 @@ a:hover {
 .ais-Hits-item_URL {
   margin: 0;
   font-size: 1.3rem;
-  color: #888;
+  color: #666;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
