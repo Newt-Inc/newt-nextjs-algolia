@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: `${process.env.NEXT_PUBLIC_NEWT_SPACE_UID}.assets.newt.so`,
+        hostname: `${process.env.NEWT_SPACE_UID}.assets.newt.so`,
       },
     ],
   },
