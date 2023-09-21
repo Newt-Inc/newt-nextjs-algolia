@@ -5,7 +5,7 @@ Static Site Generatorsの検索ページです。
 
 Newt・Algolia・Next.jsを利用して、高度な全文検索機能を実現したい方は、ぜひご確認ください。
 
-- デモ画面は [こちら](https://newt-algolia-nextjs.vercel.app/)
+- デモ画面は [こちら](https://newt-nextjs-algolia.vercel.app/)
 - チュートリアルのページは [こちら](https://www.newt.so/docs/tutorials/search-by-algolia)
 
 ## Newtスペースの設定
