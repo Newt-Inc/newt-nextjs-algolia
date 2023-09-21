@@ -10,7 +10,7 @@ import {
   RefinementList,
 } from 'react-instantsearch'
 import { Hit } from '@/components/Hit'
-import { NoResultsBoundary, NoResults } from '@/components/NoResults'
+import { NoResults, NoResultsBoundary } from '@/components/NoResults'
 import styles from './page.module.css'
 
 const searchClient = algoliasearch(
