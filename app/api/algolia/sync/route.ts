@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
       }
     })
 
-    await index.replaceAllObjects(formattedGenerators)
+    await index.saveObjects(formattedGenerators)
     return new Response('Success', { status: 200 })
   } catch (err: any) {
     return new Response(err?.message, { status: 400 })
